@@ -52,16 +52,15 @@ export default {
 
     // 模拟 ajax 异步获取内容
     onMounted(() => {});
-    const defaultContent = [
-      {
-        type: 'paragraph',
-        children: [
-          { text: '试试是不是黑体', fontFamily: '仿宋', fontSize: '20px' },
-        ],
-        lineHeight: '2',
-      },
-      { type: 'paragraph', children: [{ text: 'simple text' }] },
-    ];
+    const defaultContent = ref([
+        {
+          type: 'paragraph',
+          children: [{ text: '试试是不是黑体' }],
+          fontSize: '48px',
+          fontFamily: '黑体',
+          lineHeight: 3,
+        },
+      ]);
     const toolbarConfig = {};
     const editorConfig = { placeholder: '请输入内容...' };
 
@@ -129,6 +128,7 @@ export default {
       valueHtml,
       toolbarConfig,
       editorConfig,
+      defaultContent,
       handleCreated,
       handleChange,
       handleDestroyed,
